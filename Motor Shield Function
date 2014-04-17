@@ -1,0 +1,22 @@
+const int dir = 12;
+const int pwm = 3;
+const int brake = 9;
+
+
+void setup() {
+  pinMode(dir, OUTPUT);
+  pinMode(pwm, OUTPUT);
+  pinMode(brake, OUTPUT);
+}
+
+
+void loop() {
+  customControls(LOW, 100, HIGH);
+  
+}
+
+void customControls(boolean a, int b, boolean c) {
+  digitalWrite(brake, a);
+  analogWrite(pwm, b);
+  digitalWrite(dir, c);
+}
