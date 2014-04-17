@@ -1,0 +1,27 @@
+const int dir = 12;
+const int pwm = 3;
+const int brake = 9;
+
+
+void setup() {
+  pinMode(dir, OUTPUT);
+  pinMode(pwm, OUTPUT);
+  pinMode(brake, OUTPUT);
+}
+
+
+void loop() {
+  digitalWrite(brake, LOW); //Disable the brake
+  analogWrite(pwm, 52);  //Set motor speed to about 50% (0-255)
+  digitalWrite(dir, HIGH);  //Sets the motor forward, if it was 
+  //'LOW' the motor would spin reverse 
+  
+  delay(500);
+  analogWrite(pwm, 120);
+  delay(500);
+  analogWrite(pwm, 190);
+  delay(500);
+  analogWrite(pwm, 255);
+  delay(500);
+  
+}
